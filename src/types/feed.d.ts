@@ -1,8 +1,8 @@
 declare namespace feed {
   interface IFetchFeedsQuery {
     id?: string
-    ids?: Array<string>
-    tags?: Array<string>
+    ids?: string
+    tags?: string
     tagmode?: 'all' | 'any'
     nojsoncallback: '1' | '0'
   }
