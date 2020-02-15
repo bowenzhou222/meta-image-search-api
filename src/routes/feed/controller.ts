@@ -9,6 +9,9 @@ export const get = async (req: Request, res: Response, next: NextFunction): Prom
     const data = await getFeeds(query);
     return sendSuccessResponse(res, data, 200, req);
   } catch(err) {
-    return sendFailResponse(res, err.name, err.message, err.statusCode, req);
+    if (err.isAxiosError) {
+      return sendFailResponse(res, err.name, err.message, err.response.status, req);
+    }
+    return sendFailResponse(res, err.name, err.message, 500, req);
   }
 };
