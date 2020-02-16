@@ -7,8 +7,8 @@
     "build": "npm run tsc && cp package.json dist && cp yarn.lock dist",
     "dev": "PORT=9090 nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "./node_modules/typescript/bin/tsc",
-    "start": "npm run tsc && node ./dist/server.js"
+    "tsc": "./node_modules/.bin/tsc",
+    "start": "npm i && npm run tsc && node ./dist/server.js"
   },
   "author": "Bowen",
   "license": "ISC",
@@ -20,8 +20,7 @@
     "@types/logform": "^1.10.1",
     "@types/node": "^13.7.1",
     "@types/winston": "^2.4.4",
-    "ts-node": "^8.6.2",
-    "typescript": "^3.7.5"
+    "ts-node": "^8.6.2"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -32,6 +31,7 @@
     "logform": "^2.1.2",
     "node": "13.7.0",
     "nodemon": "^2.0.2",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "typescript": "^3.7.5"
   }
 }
